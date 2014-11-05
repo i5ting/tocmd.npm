@@ -4,7 +4,12 @@
   "description": "tocmd.npm =========",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm publish .",
+    "test": " node bin/badge.js -t js -n q "
+  },
+  "preferGlobal": "true",
+  "bin": {
+    "tocmd": "bin/tocmd.js"
   },
   "repository": {
     "type": "git",
@@ -14,6 +19,23 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/i5ting/tocmd.npm/issues"
+  },
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "gulp": "^3.8.10",
+    "gulp-istanbul": "^0.3.1",
+    "gulp-mocha": "^1.1.1",
+    "istanbul": "^0.3.2",
+    "mocha": "^2.0.1",
+    "sinon": "^1.11.1",
+    "supertest": "^0.14.0",
+    "supervisor": "^0.6.0",
+    "zombie": "^2.1.1"
+  },
+  "dependencies": {
+    "commander": "^2.5.0",
+    "handlebars": "^2.0.0",
+    "request": "^2.47.0"
   },
   "homepage": "https://github.com/i5ting/tocmd.npm"
 }
