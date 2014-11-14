@@ -5,6 +5,10 @@ tocmd  a node npm wrapper of i5ting_ztree_toc https://github.com/i5ting/i5ting_z
 
 [![npm version](https://badge.fury.io/js/i5ting_toc.svg)](http://badge.fury.io/js/i5ting_toc)
 
+## Preview 
+
+![](https://github.com/i5ting/i5ting_ztree_toc/blob/master/demo/3.png)
+
 ## Install 
 
 	npm install -g i5ting_toc
@@ -27,7 +31,7 @@ tocmd  a node npm wrapper of i5ting_ztree_toc https://github.com/i5ting/i5ting_z
 
 这个版本的命令比较简单，只有一个`-f`参数，如果没有填写，默认使用`README.md`，常见用法
 
-	tocmd -f sample.md 
+	i5ting_toc -f sample.md -o
 	
 	
 ## Basic

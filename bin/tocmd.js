@@ -51,6 +51,6 @@ var source_file = filename;
 // return;
 // main 
 var markd_config = {
-	
+	debug: false
 }
 require('../index')(source_file, is_open, markd_config);

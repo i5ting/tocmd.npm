@@ -6,12 +6,18 @@ var BufferHelper = require('bufferhelper');
 var Handlebars = require('handlebars');
 var open = require("open");
 
-function log(str){
-	console.log(str);
-}
+
+
+
 
 function generator(file_name, is_open, options) {
 	var _file_name = file_name.split('.')[0];
+	
+	var is_debug = options.debug;
+	function log(str){
+		if(is_debug == true)
+			console.log(str);
+	}
   
 	// 点号表示当前文件所在路径  
 	var str = fs.realpathSync('.');  
@@ -56,7 +62,7 @@ function generator(file_name, is_open, options) {
 	
 	fs.readFile(source_file_path, function (err, data) {
 	  if (err) throw err;
-	  console.log(data);
+	  log(data);
 		
 		var rs = fs.createReadStream(template_path, {encoding: 'utf-8', bufferSize: 11}); 
 		var bufferHelper = new BufferHelper();
@@ -69,16 +75,16 @@ function generator(file_name, is_open, options) {
 			var source = bufferHelper.toBuffer().toString();
 			var template = Handlebars.compile(source);
 		
-			console.log(template);
+			log(template);
 		
 			var	marked = require('marked');	
 			// marked = require('gulp-markdown-livereload');
 			marked(data.toString(), options, function (err, data) {
 				if (err) {
-					console.log('err ' + err);
+					log('err ' + err);
 					return;
 				}
-				console.log(data);
+				log(data);
 			
 				var css_link = "ddsds";
 				var data1 = {
@@ -89,7 +95,7 @@ function generator(file_name, is_open, options) {
 				var final_html_content = new Buffer( template(data1) );
 				fs.writeFile(dest_file_path, final_html_content , function (err) {
 				  if (err) throw err;
-				  console.log('It\'s saved!');
+				  log('It\'s saved!');
 					
 					if(is_open == true){
 						open(dest_file_path);
