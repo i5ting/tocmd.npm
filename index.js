@@ -1,19 +1,19 @@
 'use strict';
+require('shelljs/global');
+
 var gutil = require('gulp-util');
 var through = require('through2');
 var assign = require('object-assign');
 var fs = require('fs');
 var BufferHelper = require('bufferhelper');
-
 var Handlebars = require('handlebars');
-require('shelljs/global');
-
+var open = require("open");
 
 function log(str){
 	console.log(str);
 }
 
-function generator(file_name,options) {
+function generator(file_name, is_open, options) {
 	var _file_name = file_name.split('.')[0];
   
 	// 点号表示当前文件所在路径  
@@ -93,18 +93,14 @@ function generator(file_name,options) {
 				fs.writeFile(dest_file_path, final_html_content , function (err) {
 				  if (err) throw err;
 				  console.log('It\'s saved!');
+					
+					if(is_open == true){
+						open(dest_file_path);
+					}
 				});
-				
-				
 			});
-		
 		});
-	
-	
 	});
-	
-	
-	
 };
 
 // generator('sample.md')

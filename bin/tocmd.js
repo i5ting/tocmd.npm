@@ -15,14 +15,20 @@ program
   .version(version)
 	.usage(" a node npm wrapper of i5ting_ztree_toc https://github.com/i5ting/i5ting_ztree_toc ")
   .option('-f, --file [filename]', ' default is README.md ')
+	.option('-o, --open', 'open in browser')
 	.option('-v, --verbose', '打印详细日志')
   .parse(process.argv);
 	
 var pwd = process.cwd()  
 var filename = "README.md";
+var is_open = false;
 
 if (program.file) {
 	filename = program.file;
+}
+
+if (program.open) {
+	is_open = program.open;
 }
 
 var verbose = false;
@@ -47,4 +53,4 @@ var source_file = filename;
 var markd_config = {
 	
 }
-require('../index')(source_file,markd_config);
+require('../index')(source_file, is_open, markd_config);
