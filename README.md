@@ -3,7 +3,7 @@ tocmd.npm
 
 tocmd  a node npm wrapper of i5ting_ztree_toc https://github.com/i5ting/i5ting_ztree_toc 
 
-[![npm version](https://badge.fury.io/js/tocmd.svg)](http://badge.fury.io/js/tocmd)
+[![npm version](https://badge.fury.io/js/i5ting_toc.svg)](http://badge.fury.io/js/i5ting_toc)
 
 ## Install 
 
