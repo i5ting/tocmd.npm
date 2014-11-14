@@ -1,8 +1,5 @@
 'use strict';
 require('shelljs/global');
-
-var gutil = require('gulp-util');
-var through = require('through2');
 var assign = require('object-assign');
 var fs = require('fs');
 var BufferHelper = require('bufferhelper');
