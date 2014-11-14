@@ -20,7 +20,8 @@ tocmd  a node npm wrapper of i5ting_ztree_toc https://github.com/i5ting/i5ting_z
 
     -h, --help             output usage information
     -V, --version          output the version number
-    -f, --file [filename]   default is README.md 
+    -f, --file [filename]  default is README.md 
+		-o, --open             open in browser
     -v, --verbose          打印详细日志
 ```
 
