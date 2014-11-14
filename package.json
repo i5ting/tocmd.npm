@@ -2,7 +2,16 @@
   "name": "i5ting_toc",
   "version": "1.0.1",
   "description": "tocmd.npm:a npm wrapper of i5ting_ztree_toc",
-	"keywords": ["doc","markdown", "md", "toc", "table of content","ztree","i5ting_ztree_toc","i5ting"],
+  "keywords": [
+    "doc",
+    "markdown",
+    "md",
+    "toc",
+    "table of content",
+    "ztree",
+    "i5ting_ztree_toc",
+    "i5ting"
+  ],
   "main": "index.js",
   "scripts": {
     "start": "npm publish .",
@@ -22,20 +31,14 @@
     "url": "https://github.com/i5ting/tocmd.npm/issues"
   },
   "dependencies": {
-    "art-template": "^3.0.3",
     "bufferhelper": "^0.2.0",
-    "gulp": "^3.8.7",
-    "gulp-markdown-livereload": "^1.0.0",
-    "gulp-util": "^3.0.0",
+    "commander": "^2.5.0",
+    "config": "^1.7.0",
     "handlebars": "^2.0.0",
     "marked": "^0.3.2",
     "object-assign": "^1.0.0",
     "open": "0.0.5",
-    "through2": "^0.6.1",
-    "commander": "^2.5.0",
-		"config": "^1.7.0",
-    "handlebars": "^2.0.0",
-    "request": "^2.47.0"
+    "shelljs": "^0.3.0"
   },
   "devDependencies": {
     "gulp-livereload": "^2.1.1",
