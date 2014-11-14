@@ -3,6 +3,10 @@ i5ting_toc
 
 i5ting_toc  a node npm wrapper of i5ting_ztree_toc https://github.com/i5ting/i5ting_ztree_toc 
 
+- [ruby版本tocmd](https://github.com/i5ting/tocmd.gem)
+- [node版本i5ting_toc](https://github.com/i5ting/tocmd.npm)
+
+
 [![npm version](https://badge.fury.io/js/i5ting_toc.svg)](http://badge.fury.io/js/i5ting_toc)
 
 ## Preview 
