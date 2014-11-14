@@ -15,7 +15,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm publish .",
-    "test": " node bin/tocmd.js -f sample.md -v"
+    "test": " node bin/tocmd.js -f sample.md -v -o"
   },
   "preferGlobal": "true",
   "bin": {
