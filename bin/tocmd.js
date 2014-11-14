@@ -13,9 +13,8 @@ var version = require("../package.json").version;
 
 program
   .version(version)
-	.usage(" tocmd -f [filename] ")
-	.option('-n, --name [aa]', 'npm name,for example: q')
-  .option('-f, --file [mm]', ' default is README.md ')
+	.usage(" a node npm wrapper of i5ting_ztree_toc https://github.com/i5ting/i5ting_ztree_toc ")
+  .option('-f, --file [filename]', ' default is README.md ')
 	.option('-v, --verbose', '打印详细日志')
   .parse(process.argv);
 	
