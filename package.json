@@ -1,5 +1,5 @@
 {
-  "name": "tocmd",
+  "name": "i5ting_toc",
   "version": "1.0.1",
   "description": "tocmd.npm:a npm wrapper of i5ting_ztree_toc",
 	"keywords": ["doc","markdown", "md", "toc", "table of content","ztree","i5ting_ztree_toc","i5ting"],
@@ -10,7 +10,7 @@
   },
   "preferGlobal": "true",
   "bin": {
-    "tocmd": "bin/tocmd.js"
+    "i5ting_toc": "bin/tocmd.js"
   },
   "repository": {
     "type": "git",

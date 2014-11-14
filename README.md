@@ -7,14 +7,14 @@ tocmd  a node npm wrapper of i5ting_ztree_toc https://github.com/i5ting/i5ting_z
 
 ## Install 
 
-	npm install -g tocmd
+	npm install -g i5ting_toc
 	
 ## Usage
 
 ```
-➜  tocmd.npm git:(master) ✗ tocmd -h
+➜  tocmd.npm git:(master) ✗ i5ting_toc -h
 
-  Usage: tocmd  a node npm wrapper of i5ting_ztree_toc https://github.com/i5ting/i5ting_ztree_toc 
+  Usage: i5ting_toc  a node npm wrapper of i5ting_ztree_toc https://github.com/i5ting/i5ting_ztree_toc 
 
   Options:
 
