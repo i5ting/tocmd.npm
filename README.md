@@ -29,7 +29,7 @@ tocmd  a node npm wrapper of i5ting_ztree_toc https://github.com/i5ting/i5ting_z
 	tocmd -f sample.md 
 	
 	
-## basic
+## Basic
 
 current path
 
