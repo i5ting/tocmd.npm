@@ -13,8 +13,8 @@ function log(str){
 	console.log(str);
 }
 
-function main(options) {
-	var fs = require('fs');  
+function generator(file_name,options) {
+	var _file_name = file_name.split('.')[0];
   
 	// 点号表示当前文件所在路径  
 	var str = fs.realpathSync('.');  
@@ -27,9 +27,9 @@ function main(options) {
 	
 	var preview_path = pwd + '/preview';
 	
-	var source_file_path = __dirname + '/sample.md';
+	var source_file_path = __dirname + '/' + _file_name + '.md';
 	
-	var dest_file_path = pwd + '/preview.html';
+	var dest_file_path = pwd + '/preview/' + _file_name + '.html';
 	
 	if (test('-d', preview_path)) { 
 		/* do something with dir */ 
@@ -85,7 +85,7 @@ function main(options) {
 			
 				var css_link = "ddsds";
 				var data1 = {
-					"title":"default title",
+					"title":"i5ting_ztree_toc:" + _file_name,
 					"parse_markdown": data
 				};
 		
@@ -107,4 +107,6 @@ function main(options) {
 	
 };
 
-main()
+// generator('sample.md')
+
+module.exports = generator

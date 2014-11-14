@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+function isDefined(x) { return x !== null && x !== undefined; } 
+Array.prototype.contain = function(obj) {
+  return this.indexOf(obj) !== -1;
+}
+
+var program = require('commander');
+var version = require("../package.json").version;
+
+program
+  .version(version)
+	.usage(" tocmd -f [filename] ")
+	.option('-n, --name [aa]', 'npm name,for example: q')
+  .option('-f, --file [mm]', ' default is README.md ')
+	.option('-v, --verbose', '打印详细日志')
+  .parse(process.argv);
+	
+var pwd = process.cwd()  
+var filename = "README.md";
+
+if (program.file) {
+	filename = program.file;
+}
+
+var verbose = false;
+if (program.verbose) {
+	verbose = program.verbose;
+}
+
+var _verbose = verbose;
+function log(str){
+	if(_verbose == true){
+		console.log(str);
+	}
+}
+
+log('filename = ' + filename); 
+log('verbose = ' + verbose);
+
+var source_file = filename;
+
+// return;
+// main 
+var markd_config = {
+	
+}
+require('../index')(source_file,markd_config);

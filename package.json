@@ -1,11 +1,12 @@
 {
   "name": "tocmd",
-  "version": "1.0.0",
-  "description": "tocmd.npm =========",
+  "version": "1.0.1",
+  "description": "tocmd.npm:a npm wrapper of i5ting_ztree_toc",
+	"keywords": ["doc","markdown", "md", "toc", "table of content","ztree","i5ting_ztree_toc","i5ting"],
   "main": "index.js",
   "scripts": {
     "start": "npm publish .",
-    "test": " node bin/badge.js -t js -n q "
+    "test": " node bin/tocmd.js -f sample.md -v"
   },
   "preferGlobal": "true",
   "bin": {
@@ -30,7 +31,11 @@
     "marked": "^0.3.2",
     "object-assign": "^1.0.0",
     "open": "0.0.5",
-    "through2": "^0.6.1"
+    "through2": "^0.6.1",
+    "commander": "^2.5.0",
+		"config": "^1.7.0",
+    "handlebars": "^2.0.0",
+    "request": "^2.47.0"
   },
   "devDependencies": {
     "gulp-livereload": "^2.1.1",
