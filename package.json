@@ -20,22 +20,22 @@
   "bugs": {
     "url": "https://github.com/i5ting/tocmd.npm/issues"
   },
-  "devDependencies": {
-    "chai": "^1.9.2",
-    "gulp": "^3.8.10",
-    "gulp-istanbul": "^0.3.1",
-    "gulp-mocha": "^1.1.1",
-    "istanbul": "^0.3.2",
-    "mocha": "^2.0.1",
-    "sinon": "^1.11.1",
-    "supertest": "^0.14.0",
-    "supervisor": "^0.6.0",
-    "zombie": "^2.1.1"
-  },
   "dependencies": {
-    "commander": "^2.5.0",
+    "art-template": "^3.0.3",
+    "bufferhelper": "^0.2.0",
+    "gulp": "^3.8.7",
+    "gulp-markdown-livereload": "^1.0.0",
+    "gulp-util": "^3.0.0",
     "handlebars": "^2.0.0",
-    "request": "^2.47.0"
+    "marked": "^0.3.2",
+    "object-assign": "^1.0.0",
+    "open": "0.0.5",
+    "through2": "^0.6.1"
+  },
+  "devDependencies": {
+    "gulp-livereload": "^2.1.1",
+    "gulp-watch": "^0.7.0",
+    "mocha": "*"
   },
   "homepage": "https://github.com/i5ting/tocmd.npm"
 }
