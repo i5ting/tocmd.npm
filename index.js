@@ -6,10 +6,6 @@ var BufferHelper = require('bufferhelper');
 var Handlebars = require('handlebars');
 var open = require("open");
 
-
-
-
-
 function generator(file_name, is_open, options) {
 	var _file_name = file_name.split('.')[0];
 	
