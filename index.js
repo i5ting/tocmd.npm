@@ -26,7 +26,7 @@ function generator(file_name, is_open, options) {
 	
 	var preview_path = pwd + '/preview';
 	
-	var source_file_path = __dirname + '/' + _file_name + '.md';
+	var source_file_path = pwd + '/' + _file_name + '.md';
 	
 	var dest_file_path = pwd + '/preview/' + _file_name + '.html';
 	
@@ -101,6 +101,7 @@ function generator(file_name, is_open, options) {
 		});
 	});
 };
+
 
 // generator('sample.md')
 
