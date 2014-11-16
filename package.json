@@ -1,6 +1,6 @@
 {
   "name": "i5ting_toc",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "tocmd.npm:a npm wrapper of i5ting_ztree_toc",
   "keywords": [
     "doc",
