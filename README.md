@@ -42,18 +42,28 @@ i5ting_toc  a node npm wrapper of i5ting_ztree_toc https://github.com/i5ting/i5t
 示例说明
 
 ```
-var source_file = 'sample.md';
+//函数可以返回当前正在执行的项目路径
+var pwd = process.cwd()  
 
-var markd_config = {
-	debug: false
-}
+var source_file_name = pwd + '/' + source_file
+var file_name = source_file_name.split('/').pop();;
+var _file_name = file_name.split('.')[0];
 
-require('i5ting_toc')(source_file, is_open, markd_config);
+var dest_file_path = pwd + '/preview/' + _file_name + '.html';
+
+console.log('pwd=' + pwd);
+console.log('source_file_name=' + source_file_name);
+console.log('dest_file_path=' + dest_file_path);
+
+require('../index')(pwd, source_file_name, dest_file_path, is_open, markd_config);
+
 ```
 
 参数说明
 
+- pwd是存放preview的位置
 - source_file 要编译的mardown文件
+- dest_file_path 生成的html完整路径和文件名
 - is_open 是否在编译后使用浏览器中打开html
 - markd_config 编译md的选项（具体见 https://github.com/chjj/marked ）
 

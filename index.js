@@ -6,7 +6,8 @@ var BufferHelper = require('bufferhelper');
 var Handlebars = require('handlebars');
 var open = require("open");
 
-function generator(file_name, is_open, options) {
+function generator(pwd, source_file_name, dest_file_path, is_open, options) {
+	var file_name = source_file_name.split('/').pop();;
 	var _file_name = file_name.split('.')[0];
 	
 	var is_debug = options.debug;
@@ -20,15 +21,15 @@ function generator(file_name, is_open, options) {
 	log(str);  
 	
 	//函数可以返回当前正在执行的项目路径
-	var pwd = process.cwd()  
+	var pwd = pwd
 	//:属性返回的是  nodejs 的安装路径 
 	// processor.execPath 
 	
 	var preview_path = pwd + '/preview';
 	
-	var source_file_path = pwd + '/' + _file_name + '.md';
+	var source_file_path = source_file_name;
 	
-	var dest_file_path = pwd + '/preview/' + _file_name + '.html';
+	var dest_file_path = dest_file_path ;
 	
 	if (test('-d', preview_path)) { 
 		/* do something with dir */ 
