@@ -42,6 +42,10 @@ i5ting_toc  a node npm wrapper of i5ting_ztree_toc https://github.com/i5ting/i5t
 示例说明
 
 ```
+var is_open = true;
+var markd_config = {
+	debug: false
+}
 //函数可以返回当前正在执行的项目路径
 var pwd = process.cwd()  
 
