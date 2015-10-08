@@ -61,7 +61,8 @@ function generator(pwd, source_file_name, dest_file_path, is_open, options) {
 	  if (err) throw err;
 	  log(data);
 		
-		var rs = fs.createReadStream(template_path, {encoding: 'utf-8', bufferSize: 11}); 
+    // var rs = fs.createReadStream(template_path, {encoding: 'utf-8', bufferSize: 11});
+    var rs = fs.createReadStream(template_path, {bufferSize: 11}); 
 		var bufferHelper = new BufferHelper();
 
 		rs.on("data", function (trunk){
@@ -69,7 +70,7 @@ function generator(pwd, source_file_name, dest_file_path, is_open, options) {
 		});
 	
 		rs.on("end", function () {
-			var source = bufferHelper.toBuffer().toString();
+			var source = bufferHelper.toBuffer().toString('utf8');
 			var template = Handlebars.compile(source);
 		
 			log(template);
