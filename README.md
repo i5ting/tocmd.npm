@@ -8,7 +8,6 @@ i5ting_toc  a node npm wrapper of i5ting_ztree_toc https://github.com/i5ting/i5t
 - [ruby版本tocmd](https://github.com/i5ting/tocmd.gem)
 - [node版本i5ting_toc](https://github.com/i5ting/tocmd.npm)
 
-
 ## Preview 
 
 ![](https://github.com/i5ting/i5ting_ztree_toc/blob/master/demo/3.png)
