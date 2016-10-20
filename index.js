@@ -91,6 +91,15 @@ function generator(pwd, source_file_name, dest_file_path, is_open, options) {
 				};
 		
 				var final_html_content = new Buffer( template(data1) );
+        
+        log(dest_file_path)
+        
+        if (options.index === true) {
+          dest_file_path = dest_file_path.replace('README', 'index')
+        }
+        
+        log(dest_file_path)
+        
 				fs.writeFile(dest_file_path, final_html_content , function (err) {
 				  if (err) throw err;
 				  log('It\'s saved!');
