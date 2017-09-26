@@ -52,13 +52,12 @@ var markd_config = {
 	debug: false
 }
 
-//函数可以返回当前正在执行的项目路径
-var pwd = process.cwd()  
-
-var source_file_name = pwd + '/' + source_file
-var file_name = source_file_name.split('/').pop();;
+var source_file_name = pwd + '/' + source_file;
+var file_name = source_file_name.split('/').pop();
 var _file_name = file_name.split('.')[0];
-
+if (file_name.indexOf('\\') > 0) {
+    _file_name = file_name.substring(file_name.lastIndexOf("\\")).split('.')[0]
+}
 var dest_file_path = pwd + '/preview/' + _file_name + '.html';
 
 console.log('pwd=' + pwd);
