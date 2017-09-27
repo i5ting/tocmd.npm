@@ -29,3 +29,4 @@ node_modules
 
 # prevew for test
 preview
+package-lock.json
