@@ -17,6 +17,7 @@ program
 	.option('-f, --file [filename]', ' default is README.md ')
 	.option('-o, --open', 'open in browser')
 	.option('-v, --verbose', '打印详细日志')
+	.option('-d, --dir [dir]', '输出目录')
 	.parse(process.argv)
 
 var pwd = process.cwd()
@@ -47,9 +48,10 @@ log('filename = ' + filename)
 log('verbose = ' + verbose)
 
 var source_file = filename
-
+var dir = program.dir || 'preview'
 var markd_config = {
-	debug: false
+	debug: false,
+	dir
 }
 
 var source_file_name = pwd + '/' + source_file
@@ -59,7 +61,7 @@ var _file_name = file_name.split('.')[0]
 if (file_name.indexOf('\\') > 0) {
 	_file_name = file_name.substring(file_name.lastIndexOf("\\")).split('.')[0]
 }
-var dest_file_path = pwd + '/preview/' + _file_name + '.html'
+var dest_file_path = pwd + '/'+ dir +'/' + _file_name + '.html'
 
 console.log('pwd=' + pwd)
 console.log('source_file_name=' + source_file_name)

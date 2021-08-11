@@ -18,16 +18,19 @@ function generator(pwd, source_file_name, dest_file_path, is_open, options) {
 			console.log(str)
 	}
 
-	// 点号表示当前文件所在路径  
+	// 输出文件夹
+	var dir = options.dir || ''
+
+	// 点号表示当前文件所在路径
 	var str = fs.realpathSync('.')
 	log(str)
 
 	//函数可以返回当前正在执行的项目路径
 	var pwd = pwd
-	//:属性返回的是  nodejs 的安装路径 
-	// processor.execPath 
+	//:属性返回的是  nodejs 的安装路径
+	// processor.execPath
 
-	var preview_path = pwd + '/preview'
+	var preview_path = pwd + '/' + (dir || 'preview')
 
 	var source_file_path = source_file_name
 
