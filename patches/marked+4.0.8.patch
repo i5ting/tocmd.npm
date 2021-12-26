@@ -1,0 +1,48 @@
+diff --git a/node_modules/marked/lib/marked.cjs b/node_modules/marked/lib/marked.cjs
+index 6d78919..c00032e 100644
+--- a/node_modules/marked/lib/marked.cjs
++++ b/node_modules/marked/lib/marked.cjs
+@@ -1245,7 +1245,8 @@ block.pedantic = merge({}, block.normal, {
+  */
+ 
+ var inline = {
+-  escape: /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,
++  //escape: /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,
++  escape: /^\\([!\"$'*+\-./:;<=>?@\]`|~])/,
+   autolink: /^<(scheme:[^\s\x00-\x1f<>]*|email)>/,
+   url: noopTest,
+   tag: '^comment' + '|^</[a-zA-Z][\\w:-]*\\s*>' // self-closing tag
+@@ -1259,7 +1260,8 @@ var inline = {
+   nolink: /^!?\[(?!\s*\])((?:\[[^\[\]]*\]|\\[\[\]]|[^\[\]])*)\](?:\[\])?/,
+   reflinkSearch: 'reflink|nolink(?!\\()',
+   emStrong: {
+-    lDelim: /^(?:\*+(?:([punct_])|[^\s*]))|^_+(?:([punct*])|([^\s_]))/,
++    //lDelim: /^(?:\*+(?:([punct_])|[^\s*]))|^_+(?:([punct*])|([^\s_]))/,
++    lDelim: /^(?:\*+(?:([punct_])|[^\s*]))/,
+     //        (1) and (2) can only be a Right Delimiter. (3) and (4) can only be Left.  (5) and (6) can be either Left or Right.
+     //        () Skip orphan delim inside strong    (1) #***                (2) a***#, a***                   (3) #***a, ***a                 (4) ***#              (5) #***#                 (6) a***a
+     rDelimAst: /^[^_*]*?\_\_[^_*]*?\*[^_*]*?(?=\_\_)|[punct_](\*+)(?=[\s]|$)|[^punct*_\s](\*+)(?=[punct_\s]|$)|[punct_\s](\*+)(?=[^punct*_\s])|[\s](\*+)(?=[punct_])|[punct_](\*+)(?=[punct_])|[^punct*_\s](\*+)(?=[^punct*_\s])/,
+@@ -1267,7 +1269,9 @@ var inline = {
+ 
+   },
+   code: /^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/,
+-  br: /^( {2,}|\\)\n(?!\s*$)/,
++  //br: /^( {2,}|\\)\n(?!\s*$)/,
++  br: /^ {2,}\n(?!\s*$)/,
++
+   del: noopTest,
+   text: /^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*_]|\b_|$)|[^ ](?= {2,}\n)))/,
+   punctuation: /^([\spunctuation])/
+@@ -1327,9 +1331,10 @@ inline.pedantic = merge({}, inline.normal, {
+ inline.gfm = merge({}, inline.normal, {
+   escape: edit(inline.escape).replace('])', '~|])').getRegex(),
+   _extended_email: /[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/,
+-  url: /^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/,
++  url: /[^\$]^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/,
+   _backpedal: /(?:[^?!.,:;*_~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_~)]+(?!$))+/,
+-  del: /^(~~?)(?=[^\s~])([\s\S]*?[^\s~])\1(?=[^~]|$)/,
++  del: /^(~)(?=[^\s~])([\s\S]*?[^\s~])\1(?=[^~]|$)/,
++  //del: /^(~~?)(?=[^\s~])([\s\S]*?[^\s~])\1(?=[^~]|$)/,
+   text: /^([`~]+|[^`~])(?:(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)))/
+ });
+ inline.gfm.url = edit(inline.gfm.url, 'i').replace('email', inline.gfm._extended_email).getRegex();
