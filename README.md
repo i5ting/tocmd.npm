@@ -28,6 +28,18 @@ A tool that converts markdown(`.md`) file to **single**, **offline** html(`.html
 
 ## Usage
 
+```sh
+# 1:
+git clone https://github.com/chengpengzhao/md2html
+# 2: edit plantuml.jar path in package.json
+# 3:
+npm install
+# 4:
+npm run build
+# or run ./install.sh, then add sripts in bashrc to ~/.bashrc
+# 5: add environment to PATH
+```
+
 ## Contributing
 
 1. Fork it
