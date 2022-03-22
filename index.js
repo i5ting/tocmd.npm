@@ -181,11 +181,19 @@ function generator(pwd, source_file_name, dest_file_path, options, defaultJarPat
           }
         }
         //console.log(href);
-        let out = '<img src="' + href + '" alt="' + text + '"';
+        //let out = '<img src="' + href + '" alt="' + text + '"';
+        //if (title) {
+        //  out += ' title="' + title + '"';
+        //}
+        //out += this.options.xhtml ? '/>' : '>';
+        let out= '<center> <img style="width: auto;  height: auto; max-width: 65%; max-height: 65%;   border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="'+href+'"';
         if (title) {
           out += ' title="' + title + '"';
         }
         out += this.options.xhtml ? '/>' : '>';
+        if(text){
+          out+='<br> <div style="color:orange; border-bottom: 1px solid #d9d9d9; display: inline-block; color: #999; padding: 2px;">'+text+'</div></center>';
+        }
         return out;
         },
         paragraph(text) {
