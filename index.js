@@ -192,7 +192,9 @@ function generator(pwd, source_file_name, dest_file_path, options, defaultJarPat
         }
         out += this.options.xhtml ? '/>' : '>';
         if(text){
-          out+='<br> <div style="color:orange; border-bottom: 1px solid #d9d9d9; display: inline-block; color: #999; padding: 2px;">'+text+'</div></center>';
+          out+='<br><div style="color:orange; display: inline-block; color: #999; font-size: 10px;">'+text+'</div></center>';
+        }else{
+          out+='</center>';
         }
         return out;
         },
